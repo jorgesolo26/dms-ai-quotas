@@ -37,7 +37,7 @@ Monitor Claude, Codex, OpenCode Go, Z.ai, Kimi Code, DeepSeek, OpenRouter, Grok,
 - DankMaterialShell 1.5.0 or newer
 - `curl` and `jq`
 - Optional: `sqlite3`, to read the newest OpenCode Go key from `opencode.db`
-- Optional: `secret-tool` from libsecret, for Antigravity only
+- Optional: `agy` CLI, for Antigravity only
 
 ## Install
 
@@ -122,7 +122,7 @@ The plugin sends the key to `api.kimi.com`. To use `api.kimi.ai`, set `KIMI_CODE
 
 ### Antigravity
 
-Antigravity needs `secret-tool` from libsecret. The plugin reads the access token that `agy` stores in the `gemini` / `antigravity` keyring entry. It sends the token only to `daily-cloudcode-pa.googleapis.com`. If the token expires, open `agy` to refresh the login. Turn off Antigravity in the plugin settings if you do not use it.
+Antigravity reads quotas directly using the local `agy` CLI (`agy -p '/usage'`). If the token expires or session closes, open `agy` to refresh the session. Turn off Antigravity in the plugin settings if you do not use it.
 
 ## How it works
 
